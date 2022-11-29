@@ -1,5 +1,5 @@
 
-filename = "cameraman.tif";
+filename = "inputs/cameraman.tif";
 
 img = imread(filename);
 
@@ -19,7 +19,11 @@ imghpi = ifft2(imghp);
 imghp = log(1 + abs(imghp));
 imgfft = log(1 + abs(imgfft));
 
-tiledlayout(2,2);
+fig = figure();
+t = tiledlayout(2, 2);
+t.TileSpacing = 'compact';
+t.Padding = 'compact';
+
 nexttile;
 imshow(ind2rgb(im2uint8(mat2gray(img)), parula(256)));
 title('original image');
@@ -35,3 +39,5 @@ title(sprintf('ft highpass, cutoff-freq = %d', cutoff_freq));
 nexttile;
 imshow(ind2rgb(im2uint8(mat2gray(abs(imghpi))), parula(256)));
 title(sprintf('highpass, cutoff-freq = %d', cutoff_freq));
+
+print(fig, sprintf('assets/b_highpass_%d', cutoff_freq), '-dpng', '-r300');

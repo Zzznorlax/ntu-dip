@@ -1,6 +1,6 @@
 
 
-filename = "peppers.bmp";
+filename = "inputs/peppers.bmp";
 
 f = imread(filename);
 
@@ -26,8 +26,21 @@ T3 = [1 0 0
 t3 = affine2d(T3);
 fss = imwarp(fs, t3);
 
-imwrite(f, gray(256), "src/assets/transformation_original.jpg", "jpg");
-imwrite(fs, gray(256), "src/assets/transformation_fs.jpg", "jpg");
-imwrite(fsr, gray(256), "src/assets/transformation_fsr.jpg", "jpg");
-imwrite(fss, gray(256), "src/assets/transformation_fss.jpg", "jpg");
+fig = figure();
+t = tiledlayout(2, 2);
+t.TileSpacing = 'compact';
+t.Padding = 'compact';
 
+nexttile;
+imshow(fs, gray(256));
+title('fs');
+
+nexttile;
+imshow(fsr, gray(256));
+title('fsr');
+
+nexttile;
+imshow(fss, gray(256));
+title('fss');
+
+print(fig, 'assets/transformation', '-dpng', '-r300');
