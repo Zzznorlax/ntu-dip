@@ -16,53 +16,14 @@
     The results won't be the same, because the information lost as the size of the image shrinks. The smaller the size, the less information.
 
 2.
-    a.
-    ![](assets/lena_8_nearest.jpg)
-    b.
-    ![](assets/lena_8_bilinear.jpg)
-    c.
-    ![](assets/lena_8_bicubic.jpg)
-
+    ![Alt text](assets/spatial_res.png)
 
 ### 2. Bit Planes
 
 The 8 bit planes of the cameraman image:
 The bit planes are multiplied by 255 for visualization.
 
-c0:
-![](assets/bitplane_c0.jpg)
-c1:
-![](assets/bitplane_c1.jpg)
-c2:
-![](assets/bitplane_c2.jpg)
-c3:
-![](assets/bitplane_c3.jpg)
-c4:
-![](assets/bitplane_c4.jpg)
-c5:
-![](assets/bitplane_c5.jpg)
-c6:
-![](assets/bitplane_c6.jpg)
-c7:
-![](assets/bitplane_c7.jpg)
-
-c7 and ct are identical.
-![](assets/ct_c7_result.png)
-
-a. reconstructed:
-    ![](assets/reconstructed_c7.jpg)
-   difference:
-    ![](assets/diff_rc7.jpg)
-
-b. reconstructed:
-    ![](assets/reconstructed_c67.jpg)
-   difference:
-    ![](assets/diff_rc67.jpg)
-
-c. reconstructed:
-    ![](assets/reconstructed_c47.jpg)
-   difference:
-    ![](assets/diff_rc47.jpg)
+![result](assets/bitplane.png)
 
 
 ### 3. Histogram Operation
